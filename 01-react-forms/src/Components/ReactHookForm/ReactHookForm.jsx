@@ -11,14 +11,14 @@ const ReactHookForm = () => {
         lastName: yup.string().required('Escribe tu apellido'),
         age: yup.number().positive('La edad debe ser un número positivo').integer('Ingresa tu edad'),
         password: yup.string().required('No ingresaste una contraseña')
-                     .min(5, 'La contraseña es muy corta, debe tener al menos 5 caracteres')
-                     .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%.^&*])/,  
-                     'La contraseña debe tener al menos 5 caracteres, un número, una letra mayúscula, una letra minúscula y un caracter especial'),
+                    .min(5, 'La contraseña es muy corta, debe tener al menos 5 caracteres')
+                    .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%.^&*])/,  
+                    'La contraseña debe tener al menos 5 caracteres, un número, una letra mayúscula, una letra minúscula y un caracter especial'),
         gender: yup
                 .mixed()
                 .oneOf(['M','F','O'], 'Selecciona un género: Hombre, Mujer u Otro')
                 .defined()
-                 ,
+                ,
     }).required()
 
 
